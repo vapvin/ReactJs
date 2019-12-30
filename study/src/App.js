@@ -1,17 +1,25 @@
-import React,  from 'react';
+import React from 'react';
 
-const Head = props => <h1>{props.title}</h1>
+const Loading = () => <div>Loading...</div>
 
-function App() {
+class Study extends React.Component {
+  constructor() {
+    super(props)
+    this.state = {
+      loading: false
+    }
+  }
 
-  const iter = [0,1,2]
-  return (
-    <div>
-      {
-        iter.map(item => <h1 key={item}>item</h1>)
-      }
-    </div>
-  )
+  comment() {
+    const con = 1
+    const res = con > 0 ? true : false
+  }
+
+  render() {
+    const { loading } = this.state
+    if (loading) return <Loading />
+    return
+  }
 }
 
 export default App;
