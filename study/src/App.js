@@ -1,28 +1,14 @@
 import React from 'react';
-import Hello from './Hello'
 
+const Head = props => <h1>{props.title}</h1>
 
-class LifeCycle extends React.Component {
-  constructor() {
-    super(props)
-  }
-
-  componentWillMount() {
-    
-  }
-
-  render() {
-    return(<></>)
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
-    
-  }
-
+function App() {
+  return (
+    <> 
+      <Head title="This is Title" name="this is a name" />
+      <Head title="This is Title" name="this is a name" />
+    </>
+  )
 }
 
 export default App;
