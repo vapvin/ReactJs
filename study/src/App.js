@@ -1,25 +1,17 @@
 import React from 'react';
 
-class Bro extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      lang: 'Assembly',
-      date: new Date()
-    }
-  }
+function App() {
 
-  render() {
-    const { lang, date } = this.state
-    return (
-    <div>
-      {
-        lang
-      }
-    </div>
-    )
+  const handleClick = (par) => {
+    console.log(`${par} is clicked`)
   }
   
+  return (
+
+      <button onClick={() => handleClick('test')}>This is a button</button>
+
+  )
 }
+
 
 export default App;
