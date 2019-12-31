@@ -1,34 +1,14 @@
-import React from 'react';
-import Timer from './State'
+import React, { useState } from 'react';
 
-class Timer extends React.Component {
-  constructor(props) {
-    this.state = {
-      time: new Date()
-    }
-  }
-
-  componentDidMount() {
-    this.tick()
-  }
-
-  tick() {
-    this.setState({
-      time: new Date()
-    }, () => {
-        console.log(this.state)
-    })
-  }
-
-  render() {
-    const { time } = this.state
-
-    return (
-      <div>
-        {time.date.toLocaleTimeString()}
-      </div>
-    )
-  }
+function App() {
+  const [count, setCount] = useState(0)
+  return (
+    <div className="App">
+      <header className="App-header">
+        <button onClick={() => setCount(count+1)}>Hooks is very Good!</button>{count}
+      </header>
+    </div>
+  )
 }
 
 export default App;
