@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import React, { useState } from 'react';
+
+const Todo = ({ todo, index, complete, remove}) => {
+  return (
+    <div></div>
+  )
+}
 
 const App = () => {
-
-  const [data, setData] = useState({ hits: [] })
-  const [query, setQuery] = useState('react')  
-
-  useEffect(() => {
-    let ignore = false
-
-    async function get() {
-      const result = await axios(`https://hn.algolia.com/api/v1/search?query=${query}`)
-      if(!ignore) setData(result.data)
-    }
-
-    get() //start get parsing
-
-    return () => {
-      ignore = true
-    };
-  }, [query])
+  const [todo, setTodo] = useState([])
   return (
     <>
-      <input value={query} onChange={ e => setQuery(e.target.value)} />
-      <ul>
-        {data.hits.map(item => (
-          <li key={item.objectId}><a href={item.url}>{item.title}</a></li>
-        ))}
-      </ul>
+      <div className="app">
+        <div className="todo_list">
+
+          {
+            todo.map((item, index) => (
+              <Todo 
+                key={item}
+                index={index}
+                todo={todo}
+                complete={complete}
+                remove={remove}
+              />
+            ))
+          }
+          
+        </div>
+      </div>
     </>
   )
 }
