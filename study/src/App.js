@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Todo = ({ todo, index, complete, remove}) => {
+const Todo = ({ todo, index, completeTodo, removeTodo}) => {
   return (
     <>
       <div 
@@ -10,8 +10,8 @@ const Todo = ({ todo, index, complete, remove}) => {
         {todo.text}
       </div>
       <div>
-        <button conClick={() => complete(index)}>Complete</button>
-        <button conClick={() => remove(index)}>X</button>
+        <button onClick={() => completeTodo(index)}>Complete</button>
+        <button onClick={() => removeTodo(index)}>X</button>
       </div>
     </>
   )
@@ -44,15 +44,16 @@ const App = () => {
   const addTodo = text => {
     const newTodos = [...todo, { text }]
     setTodo(newTodos)
+    console.log(todo)
   }
 
-  const complete = index => {
+  const completeTodo = index => {
     const newTodos = [...todo]
     newTodos[index].isCompleted = true
     setTodo(newTodos)
   }
 
-  const remove = index => {
+  const removeTodo = index => {
     const newTodos = [...todo]
     newTodos.splice(index, 1)
     setTodo(newTodos)
@@ -60,7 +61,7 @@ const App = () => {
   
   return (
     <>
-      <div className="app">
+      <div className="app"  style={{margin: "150px 800px"}}>
         <div className="todo_list">
 
           {
@@ -69,8 +70,8 @@ const App = () => {
                 key={item}
                 index={index}
                 todo={todo}
-                complete={complete}
-                remove={remove}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
               />
             ))
           }
