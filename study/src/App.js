@@ -1,31 +1,25 @@
 import React from 'react';
 
-const Loading = () => <div>Loading...</div>
-
-class LoadingComponent extends React.Component {
-  constructor() {
+class Bro extends React.Component {
+  constructor(props) {
     super(props)
     this.state = {
-      loading: false
+      lang: 'Assembly',
+      date: new Date()
     }
   }
 
-  comment() {
-    const con = 1
-    const res = con > 0 ? true : false
-    const and = loading && (<div>loading...</div>)
-  }
-
   render() {
-    const { loading } = this.state
+    const { lang, date } = this.state
     return (
-      <>
-        {
-          loading && <Loading />
-        }
-      </>
-    ) 
+    <div>
+      {
+        lang
+      }
+    </div>
+    )
   }
+  
 }
 
 export default App;
