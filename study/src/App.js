@@ -2,19 +2,31 @@ import React, { useState } from 'react';
 
 const Todo = ({ todo, index, complete, remove}) => {
   return (
-    <div></div>
+    <>
+      <div 
+        className="todo"
+        style={{textDecoration: todo.isCompleted ? 'line-through' : ''}}
+      >
+        {todo.text}
+      </div>
+      <div>
+        <button conClick={() => complete(index)}>Complete</button>
+        <button conClick={() => remove(index)}>X</button>
+      </div>
+    </>
   )
 }
 
-const handleSubmit = e => {
-  e.preventDefault();
-  if(!value) return
-  addTodo(value)
-  setValue('')
-}
+
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('')
+  const handleSubmit = e => {
+    e.preventDefault();
+    if(!value) return
+    addTodo(value)
+    setValue('')
+  }
   return (
     <form onSubmit={handleSubmit}>
       <input 
@@ -29,6 +41,23 @@ const TodoForm = ({ addTodo }) => {
 
 const App = () => {
   const [todo, setTodo] = useState([])
+  const addTodo = text => {
+    const newTodos = [...todo, { text }]
+    setTodo(newTodos)
+  }
+
+  const complete = index => {
+    const newTodos = [...todo]
+    newTodos[index].isCompleted = true
+    setTodo(newTodos)
+  }
+
+  const remove = index => {
+    const newTodos = [...todo]
+    newTodos.splice(index, 1)
+    setTodo(newTodos)
+  }
+  
   return (
     <>
       <div className="app">
