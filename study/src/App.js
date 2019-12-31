@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => <div>Loading...</div>
 
-class Study extends React.Component {
+class LoadingComponent extends React.Component {
   constructor() {
     super(props)
     this.state = {
@@ -13,12 +13,18 @@ class Study extends React.Component {
   comment() {
     const con = 1
     const res = con > 0 ? true : false
+    const and = loading && (<div>loading...</div>)
   }
 
   render() {
     const { loading } = this.state
-    if (loading) return <Loading />
-    return
+    return (
+      <>
+        {
+          loading && <Loading />
+        }
+      </>
+    ) 
   }
 }
 
