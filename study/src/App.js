@@ -6,6 +6,27 @@ const Todo = ({ todo, index, complete, remove}) => {
   )
 }
 
+const handleSubmit = e => {
+  e.preventDefault();
+  if(!value) return
+  addTodo(value)
+  setValue('')
+}
+
+const TodoForm = ({ addTodo }) => {
+  const [value, setValue] = useState('')
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        type="text"
+        className="input"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+      />
+    </form>
+  )
+}
+
 const App = () => {
   const [todo, setTodo] = useState([])
   return (
@@ -24,6 +45,8 @@ const App = () => {
               />
             ))
           }
+
+          <TodoForm addTodo={addTodo} />
           
         </div>
       </div>
