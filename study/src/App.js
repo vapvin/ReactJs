@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Component = styled.div`
-  display:block;
+  display: ${props => props.isLoaded ? 'block' : 'none'}
 `
 
 const App = () => {
   return (
-    <Component />
+    <Component isLoaded >Complete</Component>
   )
   
 }
