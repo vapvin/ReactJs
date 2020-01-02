@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>실습: 직원 채용 페이지 만들기</title>
+      <style type = "text/css">
+         body{font-family: 바탕체;}
+         /* 글씨*/
+         .a{font-size: 30px;}
+         .a{
+            text-shadow: 5px 5px 5px black;
+         }
+         .b{font-size: 20px;}
+
+         p{color: red;}
+
+
+         /* 고정바*/
+         *{margin: 0; padding: 0;}
+         body{
+            margin: 0 auto;
+         }
+         .container{
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+         }
+         .top_bar{
+            background-color: blue;
+            position: fixed;
+            left: 0; top: 0; right: 0;
+            height: 50px;
+         }
+         .bottom_bar{
+            background-color: black;
+            position: fixed;
+            left: 0; bottom: 0; right: 0;
+            height: 50px;
+         }
+         .left_bar{
+            background-color: red;
+            position: fixed;
+            left: 0; top: 50px; bottom: 0;
+            width: 50px;
+         }
+         .right_bar{
+            background-color: yellow;
+            position: fixed;
+            right: 0; top: 50px; bottom: 0;
+            width: 50px;
+         }
+
+         /* 박스*/
+          .box1{
+             padding-left: 35px;
+            right: 100px; top: 10px;
+            border-width: thick;
+            border-style: dotted;
+            border-radius: 25px;
+            float: right;
+            width: 350px; height: 200px;
+            }
+
+            .container ul {
+                margin-left: 50px;
+            }
+      </style>
+   </head>
+   <body>
+      <div class="top_bar"></div>
+      <div class="bottom_bar"></div>
+      <div class="left_bar"></div>
+      <div class="right_bar"></div>
+      <div class="container">
+         <h1 class="a">직원 채용</h1>
+
+      <div class="box1">
+         <h1>복리 후생</h1>
+         <br>
+         <ul>
+            <li>점심, 저녁 식사비 지급</li>
+            <li>간식 제공</li>
+            <li>경조사비 지급</li>
+            <li>성과에 다른 인센티브 지급</li>
+         </ul>
+      </div>
+         <br><br>
+
+         <h1 class="b"> &nbsp;ㅡ 채용 인원 00명</h1>
+         
+         <br><br>
+
+         <h1 class="b"> &nbsp;ㅡ 지원 자격</h1>
+
+         <br><br>
+
+         <ul>
+            <li><p>학력 제한 없음</p></li>
+            <li>남성에 한하여 병역을 필하거나 면제 받은 분</li>
+            <li>해외여행 및 신원보증에 결격사유가 없는 분</li>
+            <li>외국어 능통자 및 관련 자격증 소지자 우대</li>
+         </ul>
+      </div>
+   </body>
+</html>
