@@ -8,9 +8,16 @@ const Component = styled.div`
   color: ${color}
 `
 
+const Wrapper = styled(Component)`
+  background: gray;
+  margin: 20px;
+`
+
 const App = () => {
   return (
-    <Component isLoaded >Complete</Component>
+    <Wrapper isLoaded >
+      <Component isLoaded >Complete</Component>
+    </Wrapper>
   )
   
 }
