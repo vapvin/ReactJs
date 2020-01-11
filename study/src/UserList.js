@@ -37,3 +37,9 @@ const UserList = () => {
 };
 
 export default UserList;
+
+// git add . or File name
+
+// git commit -m " Messages "
+
+// git push origin master
