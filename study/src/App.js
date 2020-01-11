@@ -1,11 +1,8 @@
-import React from 'react';
-import InputSample from './Input'
+import React from "react";
+import UserList from "./UserList";
 
 const App = () => {
-  return (
-    <InputSample />
-  )
-  
-}
+  return <UserList />;
+};
 
 export default App;
