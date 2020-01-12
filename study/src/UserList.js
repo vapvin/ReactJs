@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const User = ({ user, onRemove, onToggle }) => {
   const { username, email, id, active } = user;
+  useEffect(() => {
+    console.log("컴포넌트가 화면에 나타남");
+    return () => {
+      console.log("컴포넌트 삭제");
+    };
+  }, []);
 
   return (
     <div>
