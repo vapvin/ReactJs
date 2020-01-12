@@ -20,17 +20,20 @@ const App = () => {
     {
       id: 1,
       username: "react",
-      email: "react@abc.com"
+      email: "react@abc.com",
+      active: true
     },
     {
       id: 2,
       username: "vins",
-      email: "vins@abc.com"
+      email: "vins@abc.com",
+      active: false
     },
     {
       id: 3,
       username: "hans",
-      email: "hans@abc.com"
+      email: "hans@abc.com",
+      active: false
     }
   ]);
 
@@ -56,6 +59,8 @@ const App = () => {
   const onRemove = id => {
     setUsers(users.filter(user => user.id != id));
   };
+
+  const onToggle = id => {};
 
   return (
     <>
