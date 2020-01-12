@@ -1,6 +1,6 @@
 import React from "react";
 
-const User = ({ user, onRemove }) => {
+const User = ({ user, onRemove, onToggle }) => {
   const { username, email, id, active } = user;
 
   return (
@@ -10,6 +10,7 @@ const User = ({ user, onRemove }) => {
           color: active ? "steelblue" : "black",
           cursor: "pointer"
         }}
+        onClick={() => onToggle(id)}
       >
         {username}
       </b>
@@ -20,11 +21,16 @@ const User = ({ user, onRemove }) => {
   );
 };
 
-const UserList = ({ users, onRemove }) => {
+const UserList = ({ users, onRemove, onToggle }) => {
   return (
     <div>
       {users.map(user => (
-        <User user={user} key={user.id} onRemove={onRemove} />
+        <User
+          user={user}
+          key={user.id}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );
