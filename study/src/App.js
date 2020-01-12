@@ -37,6 +37,14 @@ const App = () => {
   const nextId = useRef(4);
 
   const onCreate = () => {
+    const user = {
+      id: nextId.current,
+      username,
+      email
+    };
+
+    setUsers([...users, user]);
+
     setInputs({
       username: "",
       email: ""
