@@ -8,25 +8,7 @@ const User = ({ user }) => {
   );
 };
 
-const UserList = () => {
-  const users = [
-    {
-      id: 1,
-      username: "react",
-      email: "react@abc.com"
-    },
-    {
-      id: 2,
-      username: "vins",
-      email: "vins@abc.com"
-    },
-    {
-      id: 3,
-      username: "hans",
-      email: "hans@abc.com"
-    }
-  ];
-
+const UserList = ({ users }) => {
   return (
     <div>
       {users.map(user => (
@@ -37,9 +19,3 @@ const UserList = () => {
 };
 
 export default UserList;
-
-// git add . or File name
-
-// git commit -m " Messages "
-
-// git push origin master
